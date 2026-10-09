@@ -59,9 +59,14 @@ and none had been tried on an industry problem. So we:
   "probably right" — essential in regulated settings.
 - **Privacy / edge**: small enough to run **on-site, with no data leaving the
   building** — important for banks and airport operations.
+- **Generalises to new cases**: unlike the original research models (which can
+  only handle the exact examples they were trained on), ours **learns the rules**
+  and handles rosters it has never seen before.
 - **Novelty**: we turned unproven research claims into a **working, measured
-  demonstration**, and filled a gap the research itself admitted — nobody had
-  tried these models on an industry scheduling task.
+  demonstration**. A real literature check confirmed that — to our knowledge — no
+  one had benchmarked this type of tiny recursive model on an industry scheduling
+  task (there is other neural scheduling work, which we cite and build on, but not
+  with these models or this verifier-backed design).
 
 ## Where it could apply
 
