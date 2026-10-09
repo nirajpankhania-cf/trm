@@ -1,0 +1,80 @@
+{
+  "task": "sudoku",
+  "n": 4,
+  "blanks": 8,
+  "recursive": {
+    "exact_match": 0.925,
+    "valid_solve": 0.995,
+    "n": 200,
+    "params": 221157,
+    "params_h": "221.16K",
+    "train_time_s": 459.0,
+    "recursive": true,
+    "n_latent": 4,
+    "T": 2,
+    "n_sup": 4,
+    "epochs": 170,
+    "blanks": 8,
+    "final_loss": 0.0392
+  },
+  "onepass": {
+    "exact_match": 0.8,
+    "valid_solve": 0.81,
+    "n": 200,
+    "params": 221157,
+    "params_h": "221.16K",
+    "train_time_s": 14.9,
+    "recursive": false,
+    "n_latent": 0,
+    "T": 1,
+    "n_sup": 1,
+    "epochs": 170,
+    "blanks": 8,
+    "final_loss": 0.0003
+  },
+  "scaling": {
+    "1": {
+      "pass": 0.98,
+      "verifier": 0.98,
+      "bestq": 0.98,
+      "majority": 0.98
+    },
+    "2": {
+      "pass": 1.0,
+      "verifier": 1.0,
+      "bestq": 0.98,
+      "majority": 0.98
+    },
+    "4": {
+      "pass": 1.0,
+      "verifier": 1.0,
+      "bestq": 0.985,
+      "majority": 1.0
+    },
+    "8": {
+      "pass": 1.0,
+      "verifier": 1.0,
+      "bestq": 0.985,
+      "majority": 0.995
+    },
+    "16": {
+      "pass": 1.0,
+      "verifier": 1.0,
+      "bestq": 0.98,
+      "majority": 0.99
+    },
+    "32": {
+      "pass": 1.0,
+      "verifier": 1.0,
+      "bestq": 0.985,
+      "majority": 0.995
+    },
+    "64": {
+      "pass": 1.0,
+      "verifier": 1.0,
+      "bestq": 0.985,
+      "majority": 0.995
+    }
+  },
+  "sigma": 0.4
+}

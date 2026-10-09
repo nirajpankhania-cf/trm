@@ -1,0 +1,41 @@
+{
+  "task": "roster",
+  "blanks": 6,
+  "spec": {
+    "workers": 6,
+    "days": 5,
+    "need_day": 2,
+    "need_night": 1,
+    "max_shifts": 4
+  },
+  "recursive": {
+    "exact_match": 0.815,
+    "valid_solve": 0.815,
+    "n": 200,
+    "params": 227928,
+    "params_h": "227.93K",
+    "train_time_s": 702.8,
+    "recursive": true,
+    "n_latent": 4,
+    "T": 2,
+    "n_sup": 4,
+    "epochs": 175,
+    "blanks": 6,
+    "final_loss": 0.0
+  },
+  "onepass": {
+    "exact_match": 0.585,
+    "valid_solve": 0.585,
+    "n": 200,
+    "params": 227928,
+    "params_h": "227.93K",
+    "train_time_s": 21.7,
+    "recursive": false,
+    "n_latent": 0,
+    "T": 1,
+    "n_sup": 1,
+    "epochs": 175,
+    "blanks": 6,
+    "final_loss": 0.0
+  }
+}
