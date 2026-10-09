@@ -226,6 +226,48 @@ removes the majority of expensive solver calls, and runs several times faster
 end-to-end. The evidence here is on small instances and must be scaled and
 piloted per the protocol in Section 9 before any production claim; but it is a
 working, measured demonstration rather than an assertion.
+
+### 12.7 Industrial applicability beyond rostering: finance and travel
+
+The result is not about rostering specifically; it is about a **reusable
+pattern**. Any problem that is (i) a fixed-size set of decisions, (ii) governed
+by hard rules that can be cheaply checked, (iii) available in many similar
+instances, and (iv) under latency, cost, privacy or edge pressure, fits the same
+tiny-proposer + verifier + exact-solver-fallback architecture. Two high-value
+sectors illustrate the point.
+
+**Travel / airlines** are the textbook home of constraint scheduling, and the
+rostering demo is a miniature of several of their core problems:
+
+| Use case | Why it fits | Relationship to our demo |
+|---|---|---|
+| Crew rostering & pairing | Duty-time limits, rest rules, qualifications; cheap to verify | The same problem, scaled up |
+| Gate / stand assignment | Gates x time slots, no clashes, towing times | Direct grid-CSP |
+| Tail assignment | Aircraft-to-route under maintenance windows | Fixed-size assignment |
+| Disruption recovery / rebooking | Must re-solve in seconds when a flight cancels | Where the latency win is the product |
+
+**Finance** fits best on the rule-checking and allocation problems (not
+prediction or world-knowledge tasks):
+
+| Use case | Why it fits | Relationship to our demo |
+|---|---|---|
+| Trade / order allocation | Split block orders under position limits, lot sizes, mandates | Fixed-size assignment under hard rules |
+| Settlement netting & collateral assignment | Eligibility rules; cheap to verify | Constraint satisfaction |
+| Pre-trade compliance / reconciliation validation | Check baskets/transactions against regulatory + mandate rules | "Configuration validation" fit |
+| Desk / operations shift scheduling | Identical structure to the demo | The same problem |
+
+A property that matters to both sectors: a ~220K-parameter model runs on a
+laptop or edge device with **no cloud dependency and no data leaving the
+premises** — directly relevant to bank data-residency requirements and to
+offline, low-latency airport-operations use.
+
+**Honest scope.** We have demonstrated the *mechanism* on small rostering and
+Sudoku instances. Finance and airline problems are structurally identical but
+larger and messier; the credible next step is a scoped pilot on one such
+workload, measuring feasibility and cost against the incumbent solver (Section 9).
+Problems needing world knowledge or continuous optimisation — price prediction,
+credit decisioning, demand forecasting, natural-language customer handling — are
+**not** a fit for this pattern and should use LLM/ML or classical optimisation.
 """
     (RES / "RESULTS_SECTION.md").write_text(md)
     print("wrote", RES / "RESULTS_SECTION.md")

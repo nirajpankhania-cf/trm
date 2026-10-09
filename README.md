@@ -19,8 +19,11 @@ Everything here runs on a laptop CPU. No GPU required.
 | Q-head selection ceiling vs verifier (rostering) | ~82% vs 91.5% |
 | **Verifier-gated hybrid (TRM + CP-SAT fallback)** | **100% feasible, 89% of solver calls avoided, 5.0x faster** |
 
-See `results/RESULTS_SECTION.md` for the drop-in paper section and
-`results/figs/` for the figures.
+### Documents
+- `results/EXECUTIVE_SUMMARY.md` — plain-English overview + value add (non-technical).
+- `results/RESULTS_SECTION.md` — drop-in paper section (Section 12), incl. finance/travel applicability.
+- `results/PAPER_with_experiments.md` — full survey paper with Section 12 inserted.
+- `results/figs/` — figures (ablation, scaling curves, hybrid).
 
 ## What this demonstrates
 
